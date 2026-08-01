@@ -436,27 +436,40 @@ export default function RegisterPage() {
               </span>
             </CheckRow>
 
-            {/* الشروط */}
-            <CheckRow
-              checked={acceptedTerms}
-              disabled={loading}
-              onChange={(value) => {
-                setAcceptedTerms(value);
-                setErrorMessage("");
-              }}
-            >
-              أوافق على{" "}
-              <a
-                href="https://mike-wolf-terms.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(event) =>
-                  event.stopPropagation()
-                }
-                className="font-bold text-orange-400 underline decoration-orange-400/40 underline-offset-4 transition hover:text-orange-300"
-              >
-                الشروط والأحكام
-              </a>
+            {/* الشروط وسياسة الخصوصية */}
+<CheckRow
+  checked={acceptedTerms}
+  disabled={loading}
+  onChange={(value) => {
+    setAcceptedTerms(value);
+    setErrorMessage("");
+  }}
+>
+  أوافق على{" "}
+  <a
+    href="https://mike-wolf-terms.vercel.app"
+    target="_blank"
+    rel="noopener noreferrer"
+    onClick={(event) =>
+      event.stopPropagation()
+    }
+    className="font-bold text-orange-400 underline decoration-orange-400/40 underline-offset-4 transition hover:text-orange-300"
+  >
+    الشروط والأحكام
+  </a>
+
+  {" "}و{" "}
+
+  <Link
+    href="/privacy"
+    target="_blank"
+    onClick={(event) =>
+      event.stopPropagation()
+    }
+    className="font-bold text-orange-400 underline decoration-orange-400/40 underline-offset-4 transition hover:text-orange-300"
+  >
+    سياسة الخصوصية
+  </Link>
             </CheckRow>
 
             <button
